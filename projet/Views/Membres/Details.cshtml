@@ -1,0 +1,49 @@
+﻿@model projetIntegrateur.Models.Membre
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Membre</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomMembre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PrenomMembre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrenomMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailMembre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MotPasseMembre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MotPasseMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelMembre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelMembre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdMembre">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

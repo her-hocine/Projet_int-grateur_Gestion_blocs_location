@@ -1,0 +1,55 @@
+﻿@model projetIntegrateur.Models.Bloc
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Bloc</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdBloc" />
+            <div class="form-group">
+                <label asp-for="AdresseBloc" class="control-label"></label>
+                <input asp-for="AdresseBloc" class="form-control" />
+                <span asp-validation-for="AdresseBloc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NbEtages" class="control-label"></label>
+                <input asp-for="NbEtages" class="form-control" />
+                <span asp-validation-for="NbEtages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracteur" class="control-label"></label>
+                <input asp-for="Contracteur" class="form-control" />
+                <span asp-validation-for="Contracteur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnneeConstruction" class="control-label"></label>
+                <input asp-for="AnneeConstruction" class="form-control" />
+                <span asp-validation-for="AnneeConstruction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageBloc" class="control-label"></label>
+                <input asp-for="ImageBloc" class="form-control" />
+                <span asp-validation-for="ImageBloc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<projetIntegrateur.Models.Piece>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SuperficiePiece)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CouleurPiece)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateRenovation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePiece)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAppartementNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuperficiePiece)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CouleurPiece)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRenovation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePiece)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAppartementNavigation.IdAppartement)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPiece">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPiece">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPiece">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

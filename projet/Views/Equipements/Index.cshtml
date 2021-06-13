@@ -1,0 +1,84 @@
+﻿@model IEnumerable<projetIntegrateur.Models.Equipement>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomEquipement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategorieEquipement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FournisseurEquipement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarqueEquipement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAchatEquip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFinGarantieEquip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EtatEquipement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageEquipement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPieceNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomEquipement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategorieEquipement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FournisseurEquipement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarqueEquipement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAchatEquip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFinGarantieEquip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EtatEquipement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageEquipement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPieceNavigation.CouleurPiece)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEquipement">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEquipement">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEquipement">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

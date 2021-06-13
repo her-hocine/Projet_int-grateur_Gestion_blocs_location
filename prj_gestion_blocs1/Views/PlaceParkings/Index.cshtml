@@ -1,0 +1,48 @@
+﻿@model IEnumerable<projetIntegrateur.Models.PlaceParking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DispoPark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdBlocNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdLocataireNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DispoPark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdBlocNavigation.AdresseBloc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdLocataireNavigation.EmailLocataire)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPlace">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPlace">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPlace">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
